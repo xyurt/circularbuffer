@@ -19,6 +19,7 @@ typedef struct CircularBuffer {
 } CircularBuffer;
 
 #define cb_is_full(cb) ((cb)->capacity) == ((cb)->count)
+#define cb_is_empty(cb) (((cb)->count) == 0)
 
 void    cb_init(CircularBuffer *cb, size_t capacity, size_t element_size);
 void    cb_free(CircularBuffer *cb);
@@ -37,3 +38,4 @@ void	*cb_get(const CircularBuffer *cb, size_t index);
 void    cb_clear(CircularBuffer *cb);
 
 #endif /* _CIRCULARBUFFER_H */
+
